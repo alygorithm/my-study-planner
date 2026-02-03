@@ -1,0 +1,308 @@
+/* ===========================
+   GENERALE PAGINA PLANNER
+=========================== */
+:host {
+  --ion-background-color: #f4f3f1;  /* Sfondo principale */
+  --ion-text-color: #344c3d;        /* Colore testo principale */
+}
+
+ion-content {
+  --ion-background-color: transparent;
+  background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
+                    url('/assets/background/sfondo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--ion-text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+ion-header ion-toolbar {
+  --background: #f2d1d4; /* Rosa pastello */
+  color: #344c3d;         /* Verde scuro per testo */
+}
+
+ion-header ion-title {
+  color: #344c3d;
+  font-family: var(--font-pixel);
+  font-size: 25px;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+/* ===========================
+   CALENDARIO
+=========================== */
+.calendar-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 8px;
+  padding: 10px;
+  background-color: transparent;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.calendar-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.calendar-container::-webkit-scrollbar-thumb {
+  background-color: #d8959b;
+  border-radius: 3px;
+}
+
+.calendar-container::-webkit-scrollbar-track {
+  background-color: #f4f3f1;
+}
+
+.day {
+  flex: 0 0 auto;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: #f2d1d4;
+  text-align: center;
+  min-width: 80px;
+  cursor: pointer;
+  white-space: nowrap;
+  color: #344c3d;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  font-family: var(--font-pixel);
+  text-transform: capitalize;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.day:hover {
+  background-color: #d8959b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.day.today {
+  background-color: #829672;
+  color: #fff;
+  font-weight: bold;
+}
+
+.day.selected {
+  background-color: #344c3d;
+  color: #fff;
+  font-weight: bold;
+}
+
+.day.today.selected {
+  background-color: #2c3e2f;
+}
+
+/* ===========================
+   STUDY LOAD MESSAGE
+=========================== */
+.study-load {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 8px 12px;
+  background: rgba(242, 209, 212, 0.8);
+  border-radius: 10px;
+  font-family: var(--font-pixel);
+  color: #344c3d;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.study-load p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.study-load small {
+  color: #344c3d;
+  opacity: 0.8;
+}
+
+
+/* ===========================
+   TASK LIST
+=========================== */
+.tasks-container {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.tasks-container h3 {
+  font-family: var(--font-pixel);
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 15px;
+  color: #344c3d;
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 600px) {
+  .tasks-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .tasks-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .tasks-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ===========================
+   CARD SINGOLA TASK
+=========================== */
+.task-card {
+   --background: transparent !important;
+  --background-hover: transparent !important;
+  --background-focused: transparent !important;
+  --background-activated: transparent !important;
+
+  --border-style: none !important;
+  --border-width: 0 !important;
+  --border-color: transparent !important;
+
+   --inner-border-width: 0 !important;
+  --inner-border-style: none !important;
+  --inner-padding-start: 0;
+  --inner-padding-end: 0;
+  --min-height: unset;
+
+  width: 100%;
+  background-color: #f2d1d4;
+  border-radius: 12px;
+  padding: 12px 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  display: block; /* rende ion-item come un blocco */
+
+  position: relative;
+  overflow: hidden;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.task-card h2 {
+  font-family: var(--font-pixel);
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 4px 0;
+  color: #344c3d;
+}
+
+.task-card p {
+  font-family: var(--font-pixel);
+  font-size: 14px;
+  margin: 0;
+  color: #344c3d;
+}
+
+/* ===========================
+   TASK COMPLETATA (BARRATO CON ANIMAZIONE)
+=========================== */
+.task-card.completed {
+  opacity: 0.7;
+  background-color: #e0e0e0;
+}
+
+.task-card.completed h2,
+.task-card.completed p {
+  color: #666;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;  
+}
+
+.task-card.completed h2::after,
+.task-card.completed p::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 55%;
+  height: 3px;
+  width: 0%;
+  background: #344c3d;
+  animation: strike 0.6s forwards;
+}
+
+@keyframes strike {
+  to {
+    width: 100%;
+  }
+}
+
+
+
+/* ===========================
+   PULSANTE AGGIUNGI TASK
+=========================== */
+ion-button.add-task-btn {
+  --background: #d8959b;
+  color: #fff;
+  font-weight: bold;
+  margin: 20px auto 0 auto;
+  width: 65%;
+  font-family: var(--font-pixel);
+}
+
+ion-button.add-task-btn::part(native) {
+  border-radius: 999px;
+}
+
+/* ===========================
+   NAV BAR
+=========================== */
+ion-footer ion-toolbar {
+  --background: #fdf7f2;
+  border-top: 1px solid #ccc;
+}
+
+.tab {
+  font-family: var(--font-pixel);
+  letter-spacing: 1px;
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+}
+
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab.active {
+  color: #344c3d;
+  font-weight: bold;
+}
+
+.logo-image {
+  width: 35px;
+  height: auto;
+  margin-bottom: 8px;
+}

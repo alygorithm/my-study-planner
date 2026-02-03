@@ -1,0 +1,275 @@
+:host {
+  --ion-background-color: #f4f3f1;
+  --ion-text-color: #344c3d;
+}
+
+/* Forza font e colore globale */
+.profile-page,
+.profile-page ion-card,
+.profile-page ion-button,
+.profile-page ion-label,
+.profile-page ion-title,
+.profile-page ion-card-title,
+.profile-page ion-card-subtitle,
+.profile-page ion-item,
+.profile-page ion-text,
+.profile-page ion-icon {
+  font-family: var(--font-pixel) !important;
+  color: #344c3d !important;
+}
+
+/* Background e testo header */
+ion-header ion-toolbar {
+  font-family: var(--font-pixel);
+  --background: #f2d1d4;
+  color: #344c3d;
+}
+
+ion-header ion-title {
+  font-size: 25px;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+/* ===========================
+   PROFILE HEADER (NUOVO)
+=========================== */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 18px 10px 18px;
+  margin-bottom: 10px;
+}
+
+.avatar-wrap {
+  background: #f2d1d4;
+  border-radius: 20px;
+  padding: 8px;
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  font-size: 60px;
+  color: #344c3d;
+}
+
+.user-info h2 {
+  font-size: 22px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.user-info p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* ===========================
+   GOAL CARD (NUOVO)
+=========================== */
+.goal-card {
+  margin: 0 18px 18px 18px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+
+  ion-card-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  ion-card-subtitle {
+    font-size: 14px;
+    color: #666;
+  }
+
+  .goal-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .goal-text span {
+    font-size: 12px;
+    color: #666;
+  }
+
+  .goal-text strong {
+    display: block;
+    font-size: 18px;
+    margin-top: 6px;
+    color: #344c3d;
+  }
+
+  .progress {
+    width: 140px;
+    height: 12px;
+    background: #f4f3f1;
+    border-radius: 999px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: #d8959b;
+    border-radius: 999px;
+  }
+
+  .percent {
+    display: block;
+    text-align: right;
+    margin-top: 6px;
+    font-size: 12px;
+    color: #666;
+  }
+}
+
+/* ===========================
+   FOCUS CARD (AGGIORNATO)
+=========================== */
+.focus-card {
+  margin: 0 18px 18px 18px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+
+  ion-card-content {
+    padding: 0;
+    background: #fff !important;
+  }
+
+  ion-list {
+    background: transparent !important;
+  }
+
+  ion-item {
+    --background: #fff !important;
+    --ion-item-background: #fff !important;
+    --ion-item-background-activated: #fff !important;
+    --ion-item-background-focused: #fff !important;
+    --ion-item-background-hover: #fff !important;
+    --ion-item-border-color: transparent !important;
+    background: #fff !important;
+    border-radius: 14px;
+    margin: 8px 10px;
+  }
+
+  ion-item:first-child {
+    margin-top: 10px;
+  }
+
+  ion-item:last-child {
+    margin-bottom: 10px;
+  }
+
+  ion-item ion-label {
+    color: #344c3d !important;
+  }
+
+  .date {
+    color: #999;
+    font-size: 12px;
+    margin-top: 2px;
+  }
+}
+
+/* ===========================
+   AZIONI
+=========================== */
+.profile-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  ion-button {
+    font-weight: bold;
+    border-radius: 12px;
+  }
+}
+
+.profile {
+  --background: #829672;
+  color: #fff;
+  width: 75%;
+  --border-radius: 999px;
+}
+
+.settings {
+  --background: #d8ce95;
+  color: #fff;
+  width: 75%;
+  --border-radius: 999px;
+}
+
+.logout {
+  --background: #d8959b;
+  color: #fff;
+  width: 75%;
+  --border-radius: 999px;
+}
+
+.profile:hover,
+.settings:hover,
+.logout:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  border-radius: 14px;
+}
+
+/* NAV BAR */
+ion-footer ion-toolbar {
+  --background: #fdf7f2;
+  border-top: 1px solid #ccc;
+}
+
+.tab {
+  letter-spacing: 1px;
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+}
+
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab.active {
+  color: #344c3d;
+  font-weight: bold;
+}
+
+.logo-image {
+  width: 35px;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+/* SCROLLBAR (rosa) */
+.profile-page {
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #d8959b;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  scrollbar-width: thin;
+  scrollbar-color: #d8959b transparent;
+}
