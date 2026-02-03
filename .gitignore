@@ -1,0 +1,10 @@
+# Java / Maven
+target/
+*.class
+*.iml
+.idea/
+
+# Node / Ionic / Angular
+node_modules/
+www/
+.env
