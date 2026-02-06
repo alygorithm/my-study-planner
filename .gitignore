@@ -8,3 +8,6 @@ target/
 node_modules/
 www/
 .env
+
+# Secrets locali
+src/main/java/app/web/mobile/cloud/my_study_planner/resources/application.properties
