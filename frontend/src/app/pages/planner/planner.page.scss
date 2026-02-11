@@ -152,6 +152,10 @@ ion-header ion-title {
   grid-column: 1 / -1;
 }
 
+p {
+  font-family: var(--font-pixel);
+}
+
 @media (min-width: 600px) {
   .tasks-container {
     grid-template-columns: repeat(2, 1fr);

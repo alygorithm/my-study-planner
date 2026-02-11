@@ -7,28 +7,32 @@
       <h1>MyStudyPlanner</h1>
     </div>
 
-    
     <form class="form-wrapper" (ngSubmit)="login()">
-      <ion-item>
+
+      <!-- EMAIL -->
+      <ion-item [class.error]="!email && submitted">
         <ion-label position="floating">Email</ion-label>
-        <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+        <ion-input type="email" [(ngModel)]="email" name="email"></ion-input>
       </ion-item>
 
-      <ion-item>
+      <!-- PASSWORD -->
+      <ion-item [class.error]="!password && submitted">
         <ion-label position="floating">Password</ion-label>
-        <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
+        <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
       </ion-item>
 
-      <ion-button type="submit" class="login-btn">
-        Accedi
+      
+      <ion-button type="submit" class="login-btn" [disabled]="isLoading">
+        <ion-spinner *ngIf="isLoading" name="crescent"></ion-spinner>
+        <span *ngIf="!isLoading">Accedi</span>
       </ion-button>
 
     </form>
 
-    <div class="register-link">
-      <p>Non hai un account? <a routerLink="/register">Registrati</a></p>
+    <div class="register-link" (click)="goToRegistrazione()">
+      <p>Non hai un account? <span class="clickable">Registrati</span></p>
     </div>
-
+    
   </div>
 
 </ion-content>

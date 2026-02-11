@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { AuthService } from '../../services/auth.service';
 import { Task } from './task.model';
 
 export interface FocusSession {
@@ -15,42 +17,48 @@ export interface FocusSession {
   providedIn: 'root'
 })
 export class TaskService {
+  private apiUrl = `${environment.apiUrl}/api`;
 
-  // URL del backend per le tasks
-  private baseUrl = 'https://study-planner-github-io.onrender.com/api/tasks';
+  constructor(
+    private http: HttpClient,
+    private authService: AuthService
+  ) {}
 
-  // URL del backend per le sessioni di focus
-  private focusUrl = 'https://study-planner-github-io.onrender.com/api/focus-sessions';
+  private getAuthHeaders(): HttpHeaders {
+    const token = this.authService.getToken();
+    return new HttpHeaders({
+      'Authorization': token ? `Bearer ${token}` : '',
+      'Content-Type': 'application/json'
+    });
+  }
 
-  constructor(private http: HttpClient) {}
-
-  // Recupera tutte le task dal backend
   getTasks(): Observable<Task[]> {
-    return this.http.get<Task[]>(this.baseUrl);
+    const headers = this.getAuthHeaders();
+    return this.http.get<Task[]>(`${this.apiUrl}/tasks`, { headers });
   }
 
-  // Aggiunge una nuova task
   addTask(task: Task): Observable<Task> {
-    return this.http.post<Task>(this.baseUrl, task);
+    const headers = this.getAuthHeaders();
+    return this.http.post<Task>(`${this.apiUrl}/tasks`, task, { headers });
   }
 
-  // Elimina una task tramite ID
   deleteTask(id: string): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`);
+    const headers = this.getAuthHeaders();
+    return this.http.delete(`${this.apiUrl}/tasks/${id}`, { headers });
   }
 
-  // Aggiorna una task esistente
   updateTask(task: Task): Observable<Task> {
-    return this.http.put<Task>(`${this.baseUrl}/${task._id}`, task);
+    const headers = this.getAuthHeaders();
+    return this.http.put<Task>(`${this.apiUrl}/tasks/${task._id}`, task, { headers });
   }
 
-  // Aggiunge una sessione di studio al backend
   addFocusSession(session: FocusSession): Observable<FocusSession> {
-    return this.http.post<FocusSession>(this.focusUrl, session);
+    const headers = this.getAuthHeaders();
+    return this.http.post<FocusSession>(`${this.apiUrl}/focus-sessions`, session, { headers });
   }
 
-  // Recupera tutte le sessioni di studio
   getFocusSessions(): Observable<FocusSession[]> {
-    return this.http.get<FocusSession[]>(this.focusUrl);
+    const headers = this.getAuthHeaders();
+    return this.http.get<FocusSession[]>(`${this.apiUrl}/focus-sessions`, { headers });
   }
 }

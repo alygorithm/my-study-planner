@@ -15,7 +15,7 @@ import { FocusSelectModalComponent } from './modals/focus-select-modal.component
 })
 export class FocusPage implements OnInit, OnDestroy {
 
-  // Durata iniziale del timer (Pomodoro classico)
+  // Durata iniziale del timer 
   readonly INITIAL_MINUTES = 25;
 
   timerMinutes: number = this.INITIAL_MINUTES;
