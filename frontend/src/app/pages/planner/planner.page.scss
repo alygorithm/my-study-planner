@@ -277,6 +277,10 @@ ion-button.add-task-btn::part(native) {
   border-radius: 999px;
 }
 
+ion-button.add-task-btn:hover {
+  --background: #FB888E;
+}
+
 /* ===========================
    NAV BAR
 =========================== */

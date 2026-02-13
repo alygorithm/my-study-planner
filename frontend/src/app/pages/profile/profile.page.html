@@ -15,10 +15,42 @@
     </div>
 
     <div class="user-info">
-      <h2>{{ user.name }}</h2>
-      <p>{{ user.email }}</p>
+      <h2>{{ user.username || 'Utente' }}</h2>
+      <p>{{ user.email || 'Email non disponibile' }}</p>
+      <p *ngIf="user.registrationDate" class="registration-date">
+        Registrato il: {{ user.registrationDate }}
+      </p>
     </div>
   </div>
+
+  <!-- BOX STATISTICHE -->
+  <ion-card class="stats-card">
+    <ion-card-header>
+      <ion-card-title>Le tue statistiche</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+          <h3>{{ user.completedTasks }}</h3>
+          <p>Task completate</p>
+        </div>
+
+        <div class="stat-item">
+          <ion-icon name="time-outline"></ion-icon>
+          <h3>{{ user.totalFocusSessions }}</h3>
+          <p>Sessioni focus</p>
+        </div>
+
+        <div class="stat-item">
+          <ion-icon name="calendar-outline"></ion-icon>
+          <h3>{{ user.totalStudyMinutes }} min</h3>
+          <p>Studio totale</p>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
 
   <!-- BOX OBIETTIVI -->
   <ion-card class="goal-card">
@@ -76,9 +108,20 @@
 
   <!-- AZIONI -->
   <div class="profile-actions">
-    <ion-button class="profile" expand="block">Modifica Profilo</ion-button>
-    <ion-button class="settings" expand="block">Impostazioni</ion-button>
-    <ion-button class="logout" expand="block">Logout</ion-button>
+    <ion-button class="profile" expand="block" disabled>
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+      Modifica Profilo
+    </ion-button>
+    
+    <ion-button class="settings" expand="block" disabled>
+      <ion-icon name="settings-outline" slot="start"></ion-icon>
+      Impostazioni
+    </ion-button>
+    
+    <ion-button class="logout" expand="block" (click)="onLogout()">
+      <ion-icon name="log-out-outline" slot="start"></ion-icon>
+      Logout
+    </ion-button>
   </div>
 
 </ion-content>

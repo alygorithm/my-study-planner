@@ -3,7 +3,6 @@
   background-color: var(--ion-background-color);
 }
 
-
 // Header
 ion-header ion-toolbar {
   --background: #f2d1d4;
@@ -30,59 +29,156 @@ ion-button.close-btn {
 }
 
 ion-button.close-btn:hover {
-    color: #d8959b;
+  color: #d8959b;
 }
 
-
-// Content
+// Content - COMPATTO
 ion-content.add-task-modal {
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+  --padding-start: 15px;
+  --padding-end: 15px;
+}
+
+// Container form - SCROLLBAR QUI!
+.form-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  
+  /* ===========================
+     SCROLLBAR PERSONALIZZATA
+  ============================ */
+  overflow-y: auto;
+  max-height: calc(100vh - 200px);
+  padding-right: 4px; /* Spazio per la scrollbar */
+}
+
+// Data selezionata
+.selected-date {
+  background-color: #f2d1d4;
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  padding: 15px;
   justify-content: center;
   align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #344c3d;
+  font-family: var(--font-pixel);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
+.selected-date ion-icon {
+  font-size: 24px;
+  color: #344c3d;
+}
 
 // Item
 ion-item {
-  --background: #c5cac1;
-  border-radius: 12px;
-  margin-bottom: 15px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  --background: #CCD6B5;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   --highlight-color-focused: transparent;
   --highlight-color: transparent;
   --border-color: transparent;
   --border-style: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
 }
 
 ion-item ion-label {
   color: #344c3d;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 16px;
+  margin-bottom: 6px;
+  font-family: var(--font-pixel);
+  letter-spacing: 1px;
 }
 
 ion-item ion-input,
-ion-item ion-textarea,
-ion-item ion-datetime, 
-ion-item ion-select {
+ion-item ion-textarea {
   color: #344c3d;
   font-size: 14px;
   font-family: var(--font-pixel);
 }
 
-ion-item ion-datetime {
-  background-color: #c5cac1;
-  font-family: var(--font-pixel);
-  margin-top: 15px;
-  font-size: 20px;
+ion-item:last-child {
+  margin-bottom: 0;
 }
 
+// Priorità con pulsanti
+.priority-item {
+  padding: 0;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.priority-buttons {
+  display: flex;
+  gap: 8px;
+  padding: 10px 0;
+  justify-content: center;
+  width: 100%;
+}
+
+.priority-btn {
+  flex: 1;
+  padding: 10px 6px;
+  border: 2px solid #a8b0a2;
+  border-radius: 8px;
+  background: #c5cac1;
+  color: #344c3d;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-family: var(--font-pixel);
+}
+
+.priority-btn ion-icon {
+  font-size: 16px;
+}
+
+.priority-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.priority-btn.active {
+  border-color: #d8959b;
+  background: #f2d1d4;
+  box-shadow: 0 3px 8px rgba(216, 149, 155, 0.3);
+}
+
+.priority-btn.alta.active {
+  background: #ffb3b3;
+  border-color: #ff6b6b;
+  color: #344c3d;
+}
+
+.priority-btn.media.active {
+  background: #ffde88;
+  border-color: #ffc107;
+  color: #344c3d;
+}
+
+.priority-btn.bassa.active {
+  background: #a8e6a8;
+  border-color: #4caf50;
+  color: #344c3d;
+}
 
 // Buttons
 .save-btn {
@@ -91,8 +187,9 @@ ion-item ion-datetime {
   font-weight: bold;
   font-family: var(--font-pixel);
   border-radius: 999px;
-  width: 65%;
-  margin: 25px auto;
+  width: 100%;
+  max-width: 250px;
+  margin: 20px auto 0;
   display: block;
   transition: all 0.2s ease;
 }
@@ -102,20 +199,27 @@ ion-item ion-datetime {
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
+.save-btn[disabled] {
+  --background: #bdc3c7;
+  opacity: 0.6;
+}
+
 ion-button.save-btn::part(native) {
-    border-radius: 999px;
-    
+  border-radius: 999px;
 }
 
-
-// Selezione priorità
-ion-select, ion-datetime {
-  --color: #344c3d;
-  width: 100%;
+/* Scrollbar personalizzata - Solo modal Add Task */
+ion-content.add-task-modal::-webkit-scrollbar {
+  width: 8px !important;
 }
-
-ion-select::part(text),
-ion-datetime::part(text-display) {
-  color: #344c3d;
-  font-size: 14px;
+ion-content.add-task-modal::-webkit-scrollbar-thumb {
+  background: #d8959b !important;
+  border-radius: 10px !important;
+}
+ion-content.add-task-modal::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+ion-content.add-task-modal {
+  scrollbar-width: thin !important;
+  scrollbar-color: #d8959b transparent !important;
 }
