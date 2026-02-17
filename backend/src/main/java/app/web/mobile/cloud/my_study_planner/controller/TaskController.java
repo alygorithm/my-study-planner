@@ -12,6 +12,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Controller REST per la gestione delle task e delle sessioni di focus
+ * 
+ * Espone endpoint per :
+ * - Creazione, lettura, aggiornamento ed eliminazione task
+ * - Creazione e recupero delle sessioni di studio
+ * 
+ * Tutte le operazioni sono associate all'utente autenticato tramite Spring Security
+ * La logica applicativa viene delegata al TaskService
+ */
 @RestController
 @RequestMapping("/api")
 public class TaskController {

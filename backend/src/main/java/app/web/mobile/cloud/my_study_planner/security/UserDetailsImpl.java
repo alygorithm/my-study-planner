@@ -8,6 +8,13 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.Collections;
 
+/**
+ * Implementazione di UserDetails di Spring Security.
+ * 
+ * Serve per integrare il modello User personalizzato con il sistema di autenticazione di Spring.
+ * Fornisce informazioni sull'utente al contesto di sicurezza, incluse password, username e ruoli.
+ */
+
 public class UserDetailsImpl implements UserDetails {
 
     private final User user;

@@ -10,6 +10,16 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/**
+ * Gestore per gli accessi negati (HTTP 403) quando un utente
+ * autenticato tenta di accedere a una risorsa non autorizzata.
+ *
+ * Implementa AccessDeniedHandler per intercettare eccezioni
+ * di tipo AccessDeniedException generate da Spring Security.
+ *
+ * Restituisce una risposta JSON con codice HTTP 403 e messaggio di errore.
+ */
+
 @Component
 public class JwtAccessDeniedHandler implements AccessDeniedHandler {
 

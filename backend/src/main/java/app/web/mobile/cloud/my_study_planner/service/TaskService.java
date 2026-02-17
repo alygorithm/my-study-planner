@@ -11,6 +11,16 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * Servizio per gestire le operazioni su Task e FocusSession.
+ *
+ * Questo servizio si occupa della logica di creazione, lettura, aggiornamento
+ * e cancellazione (CRUD) dei task e delle sessioni di studio (FocusSession)
+ * per uno specifico utente.
+ *
+ * Collabora con i repository UserRepository, TaskRepository e FocusSessionRepository.
+ */
+
 @Service
 public class TaskService {
 

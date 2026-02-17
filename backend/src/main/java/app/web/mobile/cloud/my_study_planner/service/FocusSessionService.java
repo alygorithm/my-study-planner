@@ -7,6 +7,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Servizio per gestire le FocusSession (sessioni di studio concentrate).
+ *
+ * Fornisce metodi per creare e recuperare le sessioni associate a un utente.
+ * Utilizza il repository FocusSessionRepository e il servizio TaskService per la logica di business.
+ */
+
 @Service
 public class FocusSessionService {
 

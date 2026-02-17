@@ -7,6 +7,13 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+/**
+ * Implementazione di UserDetailsService di Spring Security.
+ *
+ * Permette di caricare un utente dal database tramite lo username.
+ * Necessario per autenticazione JWT o form-based di Spring Security.
+ */
+
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 

@@ -1,5 +1,12 @@
 package app.web.mobile.cloud.my_study_planner.dto;
 
+/**
+ * DTO utilizzato per ricevere i dati di login dal client.
+ *
+ * Contiene le credenziali necessarie per autenticare un utente
+ * nel sistema.
+ */
+
 public class LoginRequest {
 
     private String email;

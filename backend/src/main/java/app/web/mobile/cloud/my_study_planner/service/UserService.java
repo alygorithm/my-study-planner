@@ -12,6 +12,15 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+/**
+ * Servizio per gestire le operazioni sugli utenti.
+ *
+ * Questo servizio si occupa di registrazione, login, recupero e cancellazione degli utenti.
+ * Implementa anche la logica di validazione delle credenziali e gestione degli account OAuth/LOCAL.
+ *
+ * Collabora con il repository UserRepository e usa BCryptPasswordEncoder per la gestione delle password.
+ */
+
 @Service
 public class UserService {
 

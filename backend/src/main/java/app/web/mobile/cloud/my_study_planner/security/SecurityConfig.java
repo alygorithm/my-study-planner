@@ -24,6 +24,17 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Configurazione principale della sicurezza Spring Security per l'applicazione.
+ *
+ * Funzioni principali:
+ * - Configura JWT-based authentication tramite JwtAuthenticationFilter
+ * - Configura OAuth2 login con Google tramite GoogleOAuth2UserService
+ * - Gestisce password encoding con BCrypt
+ * - Definisce gestione eccezioni per accesso negato e non autorizzato
+ * - Configura CORS e sessione stateless per applicazioni SPA/mobile
+ */
+
 @Configuration
 @EnableMethodSecurity
 public class SecurityConfig {
@@ -93,21 +104,21 @@ public class SecurityConfig {
     }
 
     @Bean
-public CorsConfigurationSource corsConfigurationSource() {
-    CorsConfiguration configuration = new CorsConfiguration();
-    configuration.setAllowedOrigins(List.of(
-        "http://localhost:8100",  // Ionic default
-        "http://localhost:4200",  // Angular default
-        "http://localhost:3000",  // React/Vue
-        "capacitor://localhost",  // Mobile
-        "ionic://localhost"       // Mobile
-    ));
-    configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-    configuration.setAllowedHeaders(Arrays.asList("*"));
-    configuration.setAllowCredentials(true);
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(List.of(
+            "http://localhost:8100",  // Ionic default
+            "http://localhost:4200",  // Angular default
+            "http://localhost:3000",  // React/Vue
+            "capacitor://localhost",  // Mobile
+            "ionic://localhost"       // Mobile
+        ));
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        configuration.setAllowedHeaders(Arrays.asList("*"));
+        configuration.setAllowCredentials(true);
 
-    UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-    source.registerCorsConfiguration("/**", configuration);
-    return source;
-}
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
+    }
 }
