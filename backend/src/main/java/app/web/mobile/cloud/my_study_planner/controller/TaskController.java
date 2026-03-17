@@ -22,7 +22,6 @@ import java.util.Map;
  * Tutte le operazioni sono associate all'utente autenticato tramite Spring Security
  * La logica applicativa viene delegata al TaskService
  */
-
 @RestController
 @RequestMapping("/api")
 public class TaskController {

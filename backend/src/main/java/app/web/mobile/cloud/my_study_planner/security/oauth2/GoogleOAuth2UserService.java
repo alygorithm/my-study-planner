@@ -22,7 +22,6 @@ import org.springframework.stereotype.Service;
  * 
  * Se l'utente non esiste, viene creato un nuovo record
  */
-
 @Service
 public class GoogleOAuth2UserService extends DefaultOAuth2UserService {
 

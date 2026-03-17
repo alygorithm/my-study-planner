@@ -10,5 +10,9 @@ www/
 .env
 
 # Secrets locali
+<<<<<<< HEAD
 backend/src/main/resources/application.properties
 "@
+=======
+src/main/java/app/web/mobile/cloud/my_study_planner/resources/application.properties
+>>>>>>> 60275efaa897e2ccda2fb5d032e748394b97ad35

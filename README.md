@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # MyStudyPlanner
 
 **MyStudyPlanner** è un'applicazione full-stack progettata per supportare gli studenti nella pianificazione e nel monitoraggio delle attività di studio. Offre una gestione avanzata delle task, un timer Pomodoro integrato e statistiche dettagliate, il tutto protetto da autenticazione sicura.
@@ -96,3 +97,16 @@ Il database MariaDB viene eseguito in un container isolato.
 
   3. Avvia il serve di sviluppo
     ionic serve
+=======
+# MyStudyPlanner - Backend
+
+Backend per l'applicazione MySudyPlanner
+
+## Tecnologie
+- **Spring Boot** - Framework backend
+- **Spring Security** - Sicurezza e autenticazione
+- **JWT** - Token-based authentication
+- **MariaDB** - Database relazionale
+- **Docker** - Containerizzazione database
+- **Google OAuth2** - Login con Google
+>>>>>>> 60275efaa897e2ccda2fb5d032e748394b97ad35

@@ -18,7 +18,6 @@ import java.util.Map;
  *
  * Gestisce sia eccezioni personalizzate che generiche.
  */
-
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 

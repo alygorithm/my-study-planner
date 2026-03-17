@@ -8,7 +8,6 @@ import java.security.Key;
  * Classe di utilità per generare una chiave segreta JWT in formato Base64.
  * Questa chiave può essere usata nell' application.properties come jwt.secret.
  */
-
 public class JwtKeyGenerator {
     public static void main(String[] args) {
         Key key = Keys.secretKeyFor(io.jsonwebtoken.SignatureAlgorithm.HS512);
