@@ -1,0 +1,138 @@
+:host {
+  --ion-background-color: #f4f3f1; 
+  --ion-text-color: #344c3d;   
+}
+
+// Header
+ion-header ion-toolbar {
+  --background: #f2d1d4;
+  color: #344c3d; 
+}
+
+ion-header ion-title {
+  color: #344c3d;
+  font-family: var(--font-pixel);
+  font-size: 25px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+// Content
+ion-content {
+  --ion-background-color: trasparent;
+  background-image: linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.15)),
+  url('/assets/background/sfondo-focus.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+.focus-wrapper {
+  display: flex;
+  justify-content: center;  
+  align-items: center;  
+  padding-top: 30px;     
+}
+
+.time-container {
+  background: #ffffff;
+  padding: 20px 24px;
+  border-radius: 20px;
+  text-align: center;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.focus-image {
+  width: 140px;
+  margin: 0 auto 16px;
+  display: block;
+  opacity: 0.85;
+  filter: saturate(0.9) blur(0.2px);
+}
+
+.timer {
+  font-size: 56px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #344c3d;
+  margin-top: 1px;
+  margin-bottom: 10px;
+  font-family: var(--font-pixel);
+  font-size: 65px;
+  font-weight: lighter;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.buttons ion-button {
+  flex: 1;
+  --border-radius: 14px;
+  font-weight: 500;
+}
+
+.start {
+  --background: #829672;
+  color: #fff;
+  font-weight: bold;
+  font-family: var(--font-pixel);
+}
+
+.start:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  border-radius: 14px;
+}
+
+.pause {
+  --background: #d8ce95;
+  font-weight: bold;
+  font-family: var(--font-pixel);
+}
+
+.pause:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  border-radius: 14px;
+}
+
+.reset {
+  --background: #d8959b;
+  color: #fff;
+  font-weight: bold;
+  font-family: var(--font-pixel);
+}
+
+.reset:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  border-radius: 14px;
+}
+
+.custom-alert {
+  --background: #fdf7f2; /* sfondo alert */
+  --color: #344c3d;      /* colore testo */
+  --border-radius: 16px;
+  --box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  font-family: var(--font-pixel);
+}
+
+// Buttons
+.custom-alert .cancel-btn {
+  --color: #d8959b;
+  --background: #fff0f2;
+  border-radius: 999px;
+}
+
+.custom-alert .exit-btn {
+  --color: #fff;
+  --background: #829672;
+  border-radius: 999px;
+}
