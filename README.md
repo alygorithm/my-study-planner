@@ -66,33 +66,33 @@ Il database MariaDB viene eseguito in un container isolato.
 1. Naviga nella cartella del backend 
   cd backend/src
 
-2. Configura le proprietà del database. Copia il file di esempio o rinominalo e modifica application.properties.example in application.properties
+2. Configura le proprietà del database. Copia il file di esempio o rinominalo e modifica application.properties.example in application.properties con questi valori:
 
-  # Properties:
     spring.datasource.url=jdbc:mariadb://localhost:3306/studyplanner
     spring.datasource.username=studyuser
     spring.datasource.password=S6868645s
     server.port=8081
-    # Inserisci qui il tuo JWT Secret generato
+    ! Inserisci qui il tuo JWT Secret generato !
     jwt.secret=TUO_SECRET_KEY_GENERATO
 
 3. Compila ed esegui il backend
 
-  # Installa dipendenze e compila
+  - Installa dipendenze e compila
   ./mvnw clean install -DskipTests
-  # Avvia l'applicazione
+
+  - Avvia l'applicazione
   ./mvnw spring-boot:run
 
-  Attendi il messaggio: Started MyStudyPlannerApplication in ... seconds.
+  - Attendi il messaggio: Started MyStudyPlannerApplication in ... seconds.
 
 
 
   ### Avvio del frontend
   1. Aprire un nuovo terminale e vai nella cartella frontend
-    cd frontend/src
+    # cd frontend/src
 
   2. Installa le dipendenze (solo al primo avvio)
-    npm install
+    # npm install
 
   3. Avvia il server di sviluppo
-    ionic serve
+    # ionic serve
