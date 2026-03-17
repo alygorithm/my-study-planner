@@ -78,21 +78,21 @@ Il database MariaDB viene eseguito in un container isolato.
 3. Compila ed esegui il backend
 
   - Installa dipendenze e compila
-  ./mvnw clean install -DskipTests
+  `./mvnw clean install -DskipTests`
 
   - Avvia l'applicazione
-  ./mvnw spring-boot:run
+  `./mvnw spring-boot:run`
 
-  - Attendi il messaggio: Started MyStudyPlannerApplication in ... seconds.
+  - Attendi il messaggio: `Started MyStudyPlannerApplication in ... seconds.`
 
 
 
   ### Avvio del frontend
   1. Aprire un nuovo terminale e vai nella cartella frontend
-    # cd frontend/src
+    `cd frontend/src`
 
   2. Installa le dipendenze (solo al primo avvio)
-    # npm install
+    `npm install`
 
   3. Avvia il server di sviluppo
-    # ionic serve
+    `ionic serve`
