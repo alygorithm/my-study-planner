@@ -42,9 +42,10 @@ Prerequisiti
 - Git
 
 
-### Passo 1: Clonare il Repository
-git clone https://github.com/alygorithm/my-study-planner.git
-cd my-study-planner
+### Passo 1: Clonare il Repository ed entrare nella cartella
+`git clone https://github.com/alygorithm/my-study-planner.git`
+subito dopo:
+`cd my-study-planner`
 
 ### Passo 2: Avvio del Database
 Il database MariaDB viene eseguito in un container isolato.
