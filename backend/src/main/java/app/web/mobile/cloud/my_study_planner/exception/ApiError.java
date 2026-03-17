@@ -3,7 +3,6 @@ package app.web.mobile.cloud.my_study_planner.exception;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-<<<<<<< HEAD
 /**
  * Rappresenta un errore restituito dalle API in caso di eccezioni o richieste non valide.
  *
@@ -13,8 +12,6 @@ import java.time.LocalDateTime;
  * - timestamp della generazione dell'errore
  */
 
-=======
->>>>>>> 60275efaa897e2ccda2fb5d032e748394b97ad35
 public class ApiError {
     
     private String message;
