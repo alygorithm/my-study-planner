@@ -90,7 +90,7 @@ Il database MariaDB viene eseguito in un container isolato.
 
   ### Avvio del frontend
   1. Aprire un nuovo terminale e vai nella cartella frontend
-    `cd frontend/src`
+    `cd frontend`
 
   2. Installa le dipendenze (solo al primo avvio)
     `npm install`
