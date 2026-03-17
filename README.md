@@ -44,7 +44,7 @@ Prerequisiti
 
 ### Passo 1: Clonare il Repository ed entrare nella cartella
 `git clone https://github.com/alygorithm/my-study-planner.git`
-subito dopo:
+, subito dopo:
 `cd my-study-planner`
 
 ### Passo 2: Avvio del Database
@@ -69,7 +69,7 @@ Il database MariaDB viene eseguito in un container isolato.
 
 2. Configura le proprietà del database. Copia il file di esempio o rinominalo e modifica application.properties.example in application.properties con questi valori:
 
-    spring.datasource.url=jdbc:mariadb://localhost:3306/studyplanner
+    ```spring.datasource.url=jdbc:mariadb://localhost:3306/studyplanner
     spring.datasource.username=studyuser
     spring.datasource.password=S6868645s
     server.port=8081
