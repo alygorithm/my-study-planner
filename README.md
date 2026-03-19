@@ -70,7 +70,7 @@ Il database MariaDB viene eseguito in un container isolato.
 1. Naviga nella cartella del backend 
   cd backend/src
 
-2. Configura le proprietà del database. Copia il file di esempio o rinominalo e modifica application.properties.example in application.properties con questi valori:
+2. Configura le proprietà del database. Copia il file di esempio o rinominalo e modifica `backend/src/main/.../resources/application.properties.example` in application.properties con questi valori:
 
     ```spring.datasource.url=jdbc:mariadb://localhost:3306/studyplanner
     spring.datasource.username=studyuser
@@ -78,6 +78,10 @@ Il database MariaDB viene eseguito in un container isolato.
     server.port=8081
     ! Inserisci qui il tuo JWT Secret generato !
     jwt.secret=TUO_SECRET_KEY_GENERATO
+
+    Tip per generare il JTW Secret:
+    - Vai in `backend/src/main/.../JwtKeyGenerator.java` ed esegui la classe
+    - Ti verrà fornito un jwt secret da aggiungere in `application.properties`
 
 3. Compila ed esegui il backend
 
