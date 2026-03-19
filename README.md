@@ -63,6 +63,9 @@ Il database MariaDB viene eseguito in un container isolato.
 
   Verifica che sia attivo con docker ps
 
+  Per accedere al proprio databse usare il comando: `docker exec -it mystudy-db -u root -p`
+  Password: `root`
+
 ### Passo 3: Configurazione e Avvio del backend
 1. Naviga nella cartella del backend 
   cd backend/src
